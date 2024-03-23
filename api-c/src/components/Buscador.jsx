@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import Button from "react-bootstrap/esm/Button";
@@ -14,19 +15,10 @@ function Buscador({ leyes }) {
     setLey(leyEncontrada);
   };
 
-  const ColoredLine = ({ color }) => (
-    <hr
-      style={{
-        color: color,
-        backgroundColor: color,
-        height: 5,
-      }}
-    />
-  );
 
   return (
     <>
-      <div className="container bg-light p-3 rounded border ">
+      <div className="container bg-light p-3 rounded border mb-5">
         <div className="row ">
           <div className="col-md-12">
             <h2>¿Buscas una ley específica?</h2>
@@ -63,7 +55,6 @@ function Buscador({ leyes }) {
           </div>
         )}
       </div>
-      <ColoredLine color="blue" />
     </>
   );
 }

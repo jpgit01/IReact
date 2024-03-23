@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
+
 import Buscador from "./Buscador";
+
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function MiApi({ setLeyes }) {
+
   const [dataUrl1, setDataUrl1] = useState([]);
   const [dataUrl2, setDataUrl2] = useState([]);
+
+
   const [currentData, setCurrentData] = useState([]);
+
+
   const [showBuscador, setShowBuscador] = useState(false);
   const [showTable1, setShowTable1] = useState(false);
   const [showTable2, setShowTable2] = useState(false);
@@ -53,14 +63,14 @@ function MiApi({ setLeyes }) {
   
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
+      <Container>
+        <Row>
+          <Col className="col-md-12">
             <h1 className="display-4 text-primary">Días Festivos y leyes asociadas. Chile 2024</h1>
-          </div>
-        </div>
-        <div className="row border p-3">
-          <div className="col-md-12">
+          </Col>
+        </Row>
+        <Row className="row border p-3">
+          <Col className="col-md-12">
           <div className="d-grid gap-2 m-3">
             <Button
               variant="primary"
@@ -82,7 +92,7 @@ function MiApi({ setLeyes }) {
             {showBuscador && <Buscador leyes={currentData} />}
 
             {showTable1 && (
-              <Table striped bordered hover>
+              <Table striped bordered hover responsive>
                 <thead>
                   <tr>
                     <th>Fecha</th>
@@ -107,7 +117,7 @@ function MiApi({ setLeyes }) {
             )}
 
             {showTable2 && (
-              <Table striped bordered hover>
+              <Table striped bordered hover responsive>
                 <thead>
                   <tr>
                     <th>Título</th>
@@ -134,9 +144,9 @@ function MiApi({ setLeyes }) {
                 </tbody>
               </Table>
             )}
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
