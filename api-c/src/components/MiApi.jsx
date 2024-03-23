@@ -58,12 +58,13 @@ function MiApi({ setLeyes }) {
             <h1 className="display-4 text-primary">Días Feriados y leyes correspondientes en Chile 2024</h1>
           </div>
         </div>
-        <div className="row border">
+        <div className="row border p-3">
           <div className="col-md-12">
+          <div className="d-grid gap-2 m-3">
             <Button
               variant="primary"
               size="sm"
-              className="m-3"
+              className="mt-2"
               onClick={handleFirstButtonClick}
             >
               Feriados 2024
@@ -71,11 +72,12 @@ function MiApi({ setLeyes }) {
             <Button
               variant="primary"
               size="sm"
-              className="m-3"
+              className="mt-2"
               onClick={handleSecondButtonClick}
             >
               Leyes correspondientes a días feriados
             </Button>
+            </div>
             {showBuscador && <Buscador leyes={currentData} />}
 
             {showTable1 && (
