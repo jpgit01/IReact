@@ -50,12 +50,13 @@ function MiApi({ setLeyes }) {
     }
   };
 
+  
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="display-4 text-primary">Días Feriados y leyes correspondientes en Chile 2024</h1>
+            <h1 className="display-4 text-primary">Días Festivos y leyes asociadas. Chile 2024</h1>
           </div>
         </div>
         <div className="row border p-3">
@@ -67,7 +68,7 @@ function MiApi({ setLeyes }) {
               className="mt-2"
               onClick={handleFirstButtonClick}
             >
-              Feriados 2024
+              Feriados primer semestre 2024
             </Button>
             <Button
               variant="primary"
@@ -75,7 +76,7 @@ function MiApi({ setLeyes }) {
               className="mt-2"
               onClick={handleSecondButtonClick}
             >
-              Leyes correspondientes a días feriados
+              Leyes correspondientes
             </Button>
             </div>
             {showBuscador && <Buscador leyes={currentData} />}
@@ -84,15 +85,17 @@ function MiApi({ setLeyes }) {
               <Table striped bordered hover>
                 <thead>
                   <tr>
-                    <th>FECHA</th>
-                    <th>TITULO</th>
-                    <th>EXTRA</th>
-                    <th>TIPO</th>
+                    <th>Fecha</th>
+                    <th>Nombre del feriado</th>
+                    <th>Condición</th>
+                    <th>Categoría</th>
                   </tr>
                 </thead>
                 <tbody>
                   {currentData.map((item, index) => (
                     <tr key={item.id ? item.id + "-" + index : index}>
+
+                      
                       <td>{item.date}</td>
                       <td>{item.title}</td>
                       <td>{item.extra}</td>
@@ -107,9 +110,9 @@ function MiApi({ setLeyes }) {
               <Table striped bordered hover>
                 <thead>
                   <tr>
-                    <th>TITULO</th>
-                    <th>CONTENIDO</th>
-                    <th>LINK</th>
+                    <th>Título</th>
+                    <th>Contenido</th>
+                    <th>Enlace</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -121,7 +124,7 @@ function MiApi({ setLeyes }) {
                         <div className="d-grid gap-2">
                           <a href={item.link} target="blank">
                             <Button variant="primary" size="sm">
-                              Ley
+                              Ver
                             </Button>
                           </a>
                         </div>

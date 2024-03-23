@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
-import Alert from 'react-bootstrap/Alert';
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/esm/Button";
 
 function Buscador({ leyes }) {
   const [selectedId, setSelectedId] = useState("");
@@ -25,8 +26,8 @@ function Buscador({ leyes }) {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
+      <div className="container bg-light p-3 rounded border ">
+        <div className="row ">
           <div className="col-md-12">
             <h2>¿Buscas una ley específica?</h2>
           </div>
@@ -45,8 +46,15 @@ function Buscador({ leyes }) {
         {ley && (
           <div>
             <Alert variant="success">
-              <Alert.Heading><h2>{ley.title}</h2></Alert.Heading>
+              <Alert.Heading>
+                <h2>{ley.title}</h2>
+              </Alert.Heading>
               <p>{ley.content}</p>
+              <a href={ley.link} target="blank">
+                <Button variant="primary" size="sm" className="mt-2">
+                  Ver Ley
+                </Button>
+              </a>
             </Alert>
           </div>
         )}
