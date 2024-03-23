@@ -111,7 +111,7 @@ function MiApi({ setLeyes }) {
                 <thead>
                   <tr>
                     <th>Título</th>
-                    <th>Contenido</th>
+                    <th>Resumen</th>
                     <th>Enlace</th>
                   </tr>
                 </thead>

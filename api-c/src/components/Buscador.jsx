@@ -34,12 +34,15 @@ function Buscador({ leyes }) {
         </div>
         <Form.Group className="mb-3">
           <Form.Select name="leyes" value={selectedId} onChange={handleChange}>
-            <option value="">¿Buscas una ley especifica?</option>
-            {leyes.map((ley) => (
-              <option key={ley.id} value={ley.id}>
-                Ley Número: {ley.id}
-              </option>
-            ))}
+            <option value="">¿Buscas una ley específica?</option>
+            {leyes
+              .slice()
+              .sort((a, b) => b.id - a.id)
+              .map((ley) => (
+                <option key={ley.id} value={ley.id}>
+                  Seleccionar Ley: {ley.id}
+                </option>
+              ))}
           </Form.Select>
         </Form.Group>
 
@@ -49,6 +52,7 @@ function Buscador({ leyes }) {
               <Alert.Heading>
                 <h2>{ley.title}</h2>
               </Alert.Heading>
+              <h4 className="mt-3 mb-2">Resumen</h4>
               <p>{ley.content}</p>
               <a href={ley.link} target="blank">
                 <Button variant="primary" size="sm" className="mt-2">
