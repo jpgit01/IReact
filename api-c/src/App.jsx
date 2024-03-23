@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import MiApi from './components/MiApi'
-import Buscador from './components/Buscador'
+import React, { useState } from 'react';
+import './App.css';
+import MiApi from './components/MiApi';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [leyes, setLeyes] = useState([]);
 
   return (
     <>
-      <MiApi/>
-    <Buscador/>
+      <MiApi setLeyes={setLeyes} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
