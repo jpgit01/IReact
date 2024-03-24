@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+
+
 function MiApi({ setLeyes }) {
 
   const [dataUrl1, setDataUrl1] = useState([]);
@@ -30,9 +32,8 @@ function MiApi({ setLeyes }) {
   useEffect(() => {
     getData("https://api.victorsanmartin.com/feriados/en.json").then((data) => {
       setDataUrl1(data?.data);
-      console.log(data)
     });
-  }, []);
+  },[]);
 
   const handleFirstButtonClick = () => {
     setCurrentData(dataUrl1);
