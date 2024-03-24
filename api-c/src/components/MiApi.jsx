@@ -30,6 +30,7 @@ function MiApi({ setLeyes }) {
   useEffect(() => {
     getData("https://api.victorsanmartin.com/feriados/en.json").then((data) => {
       setDataUrl1(data?.data);
+      console.log(data)
     });
   }, []);
 
